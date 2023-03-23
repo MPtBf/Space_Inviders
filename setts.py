@@ -12,7 +12,9 @@ bg_img_mult = 1
 
 player_speed = 5
 enemy_speed = 3
+enemy_speed_rand = 1
 enemy_speed_down = 70
+enemy_speed_down_rand = 20
 
 
 fps_location = (WIDTH-95, 5)
