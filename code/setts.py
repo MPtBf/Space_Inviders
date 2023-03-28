@@ -7,18 +7,25 @@ FPS = 60
 
 
 
-bg_img_mult = 1
-
 
 player_speed = 5
+reloading_cooldown = 1
+bullet_speed = 7
+
 enemy_speed = 3
 enemy_speed_rand = 1
-enemy_speed_down = 70
+enemy_speed_down = 60
 enemy_speed_down_rand = 20
 
+bg_img_mult = 1
 
-fps_location = (WIDTH-95, 5)
-play_pause_location = (WIDTH-150,0)
+score_location = (WIDTH-100, 5)
+fps_location = (WIDTH-100, 35)
+
+# отладка
+show_hitboxes = False
+v_moving = False
+show_fps = False
 
 # цвета
 WHITE = (255,255,255)
