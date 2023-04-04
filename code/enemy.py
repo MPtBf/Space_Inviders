@@ -13,8 +13,8 @@ class Enemy(pg.sprite.Sprite):
         self.sc = sc
         self.image = image
         self.rect = self.image.get_rect()
-        self.rect.topleft = (randint(0,WIDTH-self.image.get_width()),randint(0,150))
-        self.hitbox = self.rect.copy().inflate(-10,-30)
+        self.rect.topleft = (randint(0,WIDTH-self.image.get_width()),-randint(0,150) - self.rect.height)
+        self.hitbox = self.rect.copy().inflate(-20,-30)
         self.speed = choice((-1,1))*(enemy_speed+randint(-enemy_speed_rand,enemy_speed_rand))
 
     def update(self):
@@ -29,6 +29,9 @@ class Enemy(pg.sprite.Sprite):
             self.rect.x = 0
             self.speed = -self.speed
             self.rect.y += enemy_speed_down + randint(-enemy_speed_down_rand, enemy_speed_down_rand)
+
+        if self.rect.top > HEIGHT:
+            self.rect.topleft = (randint(0,WIDTH-self.image.get_width()),-randint(0,150) - self.rect.height)
 
         self.hitbox.center = self.rect.center
         self.drawing()
